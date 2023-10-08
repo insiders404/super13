@@ -1,0 +1,18 @@
+echo "Enter first number :"
+read n
+echo "Enter second number :"
+read m
+for (( i=1;i<=n;i++ ))
+do
+if [ `expr $n % $i` -eq 0 ]
+then
+if [ `expr $m % $i` -eq 0 ]
+then
+gcd=$i
+fi
+fi
+done
+echo "G.C.D. :$gcd"
+lcm=`expr $n \* $m`
+lcm1=`expr $lcm / $gcd`
+echo "L.C.M. is $lcm1"
